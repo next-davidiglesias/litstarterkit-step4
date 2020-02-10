@@ -1,4 +1,4 @@
-import {asyncAppend} from 'lit-html/directives/async-append.js';
+import {asyncReplace} from 'lit-html/directives/async-replace.js';
 import { render, html } from "lit-html";
 
 const wait = (t) => new Promise((resolve) => setTimeout(resolve, t));
@@ -11,6 +11,6 @@ async function* countUp() {
 }
 
 render(html`
-  Count: <span>${asyncAppend(countUp())}</span>.
+  Count: <span>${asyncReplace(countUp())}</span>.
 `, document.body);
 
